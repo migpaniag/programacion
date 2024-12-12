@@ -119,6 +119,7 @@ main {
 
 .content-wrapper {
     flex: 1;
+    min-height: 0;
     overflow: auto;
 }
 
@@ -151,7 +152,7 @@ main {
 
 .programs-container {
     flex: 1;
-    position: relative;
+    min-width: 0;
     background: repeating-linear-gradient(
         to right,
         #fff 0px,
@@ -159,8 +160,7 @@ main {
         #c0c0c0 99px,
         #c0c0c0 100px
     );
-    overflow-x: scroll;
-    overflow-y: visible;
+    overflow: auto;
 }
 
 .programs-row {
