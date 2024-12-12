@@ -7,16 +7,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sincronizar scroll horizontal
     function setupScrollSync() {
-        const timeHeader = document.querySelector('.time-slots');
-        const contentWrapper = document.querySelector('.content-wrapper');
+        const channelsGrid = document.querySelector('.channels-grid');
+        let isScrolling = false;
         
-        // Sincronizar scroll horizontal entre time-slots y programas
-        programsContainer.addEventListener('scroll', () => {
-            timeHeader.scrollLeft = programsContainer.scrollLeft;
-        });
-
-        timeHeader.addEventListener('scroll', () => {
-            programsContainer.scrollLeft = timeHeader.scrollLeft;
+        // Sincronizar scroll horizontal
+        channelsGrid.addEventListener('scroll', () => {
+            if (!isScrolling) {
+                isScrolling = true;
+                const scrollLeft = channelsGrid.scrollLeft;
+                timeSlots.style.transform = `translateX(-${scrollLeft}px)`;
+                isScrolling = false;
+            }
         });
     }
 

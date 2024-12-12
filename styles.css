@@ -76,6 +76,7 @@ main {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    position: relative;
 }
 
 .time-header {
@@ -85,14 +86,18 @@ main {
     display: flex;
     background-color: #fff;
     border-bottom: 2px solid #e0e0e0;
+    width: 100%;
 }
 
 .channel-column {
+    position: sticky;
+    left: 0;
     background-color: #fff;
     border-right: 2px solid #e0e0e0;
     width: 200px;
     min-width: 200px;
     height: 50px;
+    z-index: 11;
 }
 
 .time-slots {
@@ -102,8 +107,9 @@ main {
     min-width: max-content;
     background: linear-gradient(to right, #f8f9fa 0px, #f8f9fa 99px, #c0c0c0 99px, #c0c0c0 100px);
     background-size: 100px 100%;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    position: relative;
+    z-index: 9;
+    will-change: transform;
 }
 
 .time-slot {
@@ -120,12 +126,17 @@ main {
 .content-wrapper {
     flex: 1;
     min-height: 0;
-    overflow: auto;
+    overflow-y: scroll;
+    position: relative;
+    height: calc(100vh - 250px);
 }
 
 .channels-grid {
     display: flex;
     min-height: min-content;
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 .channels-list {
@@ -160,7 +171,7 @@ main {
         #c0c0c0 99px,
         #c0c0c0 100px
     );
-    overflow: auto;
+    position: relative;
 }
 
 .programs-row {
