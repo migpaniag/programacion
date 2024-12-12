@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programación TV</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Programación TV</h1>
+            <div class="date-selector">
+                <button id="prevDay">←</button>
+                <span id="currentDate"></span>
+                <button id="nextDay">→</button>
+            </div>
+        </header>
+        
+        <main>
+            <div class="time-header">
+                <div class="channel-column"></div>
+                <div class="time-slots">
+                    <!-- Las horas se generarán dinámicamente -->
+                </div>
+            </div>
+            <div class="content-wrapper">
+                <div class="channels-grid">
+                    <div class="channels-list">
+                        <!-- Los canales se cargarán dinámicamente -->
+                    </div>
+                    <div class="programs-container">
+                        <!-- Los programas se cargarán dinámicamente -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
